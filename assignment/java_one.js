@@ -62,12 +62,7 @@
     <h1>My Details</h1>
 
     <p>
-        Hello! My name is Natien Sharma. I am learning HTML and creating my first simple webpage.
-        This is a small paragraph about me. I am a motivated and curious individual who enjoys
-        learning new things and improving my skills every day. I have a strong interest in
-        technology and creativity, and I like exploring different ideas to grow both personally
-        and professionally. I believe in hard work, consistency, and always staying positive
-        while facing challenges.
+       I'm a second-year engineering student who is very interested in technology and software development. I'm working on improving my technical skills and getting hands-on experience with modern development tools and frameworks right now. My tech stack includes basic knowledge of front-end and back-end technologies, as well as databases and version control systems. As I learn more about new technologies, I work on getting better at solving problems and making apps that are easy to use and work well. I'm excited to learn more about engineering and work on real-world projects in the future
     </p>
 
     <button type="button" onclick="showUserInfo()">
@@ -81,12 +76,12 @@
     </p>
    
     <p>
-        <a href="../assignment/one _css.html">Return to with css</a>
+        <a href="../assignment/one_css.html">Return to with css</a>
     </p>
 
 
     <p>
-        <a href="../assignment/home.html">Return to home page</a>
+        <a href="../assignment/index.html">Return to home page</a>
     </p>
 
 </body>
