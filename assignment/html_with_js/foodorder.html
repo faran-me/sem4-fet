@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Food Order</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      width: 400px;
+      margin: 40px auto;
+    }
+
+    .food-item {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .food-name {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .food-price {
+      font-size: 14px;
+      color: gray;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #ff6b35;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #e85d2d;
+    }
+
+    .total-box {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    #total-price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    #order-items {
+      color: gray;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+    #submit-btn {
+      margin-top: 12px;
+      width: 100%;
+      background-color: #2ecc71;
+      font-size: 16px;
+    }
+    #submit-btn:hover {
+      background-color: #27ae60;
+    }
+
+    #clear-btn {
+      margin-top: 8px;
+      background-color: #ccc;
+      color: #333;
+      width: 100%;
+    }
+    #success-msg {
+      display: none;
+      margin-top: 12px;
+      background-color: #d4edda;
+      color: #155724;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Food Order App</h1>
+    <div class="food-item">
+      <div>
+        <div class="food-name">Burger</div>
+        <div class="food-price">Rs. 120</div>
+      </div>
+      <button onclick="addItem('Burger', 120)">Add</button>
+    </div>
+    <div class="food-item">
+      <div>
+        <div class="food-name">Pizza</div>
+        <div class="food-price">Rs. 250</div>
+      </div>
+      <button onclick="addItem('Pizza', 250)">Add</button>
+    </div>
+    <div class="food-item">
+      <div>
+        <div class="food-name">Noodles</div>
+        <div class="food-price">Rs. 90</div>
+      </div>
+      <button onclick="addItem('Noodles', 90)">Add</button>
+    </div>
+    <div class="total-box">
+      <div id="order-items">Nothing added yet</div>
+      <div id="total-price">Rs. 0</div>
+    </div>
+    <button id="submit-btn" onclick="submitOrder()">Submit Order</button>
+    <button id="clear-btn" onclick="clearOrder()">Clear Order</button>
+    <div id="success-msg">
+      Order placed successfully! We will deliver soon.
+    </div>
+  </div>
+  <script>
+    var total = 0;
+    var orders = [];
+    function addItem(name, price) {
+      total = total + price;
+      orders.push(name);
+      document.getElementById('total-price').textContent = 'Rs. ' + total;
+      document.getElementById('order-items').textContent = orders.join(', ');
+      document.getElementById('success-msg').style.display = 'none';
+    }
+    function submitOrder() {
+      if (orders.length === 0) {
+        alert('Please add at least one item!');
+        return;
+      }
+      document.getElementById('success-msg').style.display = 'block';
+    }
+    function clearOrder() {
+      total = 0;
+      orders = [];
+      document.getElementById('total-price').textContent = 'Rs. 0';
+      document.getElementById('order-items').textContent = 'Nothing added yet';
+      document.getElementById('success-msg').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
